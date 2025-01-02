@@ -104,6 +104,7 @@ FROM taxi_data;
 
 
 **Average Trip Fare by Hour**
+
 The bar chart represents the average trip fare amount (y-axis) at different hours of the day (x-axis). Each bar corresponds to a specific hour, indicating the fare trends throughout the day.
 
 - The average trip fare peaks at 3:30 AM (₹15.01), likely due to high demand during late-night or early-morning hours, such as for airport drop-offs or nightlife activities.
@@ -118,6 +119,7 @@ The bar chart illustrates the average extra charges (y-axis) applied to trips du
 - Identifying such patterns is valuable for refining pricing strategies and improving customer communication about fare breakdowns.
 
  **Demand in Different Parts of the City**
+ 
 The geospatial map shows the pickup locations for taxi trips across the city. Dense clusters of blue points indicate areas with high demand, while sparse points highlight regions with lower demand.
 
 - Central Manhattan exhibits the densest clusters of demand, reflecting its status as a commercial hub. Additionally, high activity is observed near Union City, Roosevelt Island, and LaGuardia Airport, suggesting significant demand from transportation hubs and key locations.
