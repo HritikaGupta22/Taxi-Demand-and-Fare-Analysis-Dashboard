@@ -55,6 +55,71 @@ CREATE TABLE taxi_data (
     'json.timestamp-format.standard' = 'ISO-8601'  -- Ensure correct timestamp format parsing
 );
 ```
+**create elk table**
+
+```
+CREATE TABLE taxi_data_index (
+    id BIGINT,
+    VendorID INTEGER,
+    tpep_pickup_datetime TIMESTAMP(3),
+    tpep_dropoff_datetime TIMESTAMP(3),
+    passenger_count INTEGER,
+    trip_distance FLOAT,
+    pickup_longitude DOUBLE,
+    pickup_latitude DOUBLE,
+    RatecodeID INTEGER,
+    store_and_fwd_flag STRING,
+    dropoff_longitude DOUBLE,
+    dropoff_latitude DOUBLE,
+    payment_type INTEGER,
+    fare_amount FLOAT,
+    extra FLOAT,
+    mta_tax FLOAT,
+    tip_amount FLOAT,
+    tolls_amount FLOAT,
+    improvement_surcharge FLOAT,
+    total_amount FLOAT
+) WITH (
+    'connector' = 'elasticsearch-7',
+    'hosts' = 'http://elasticsearch:9200',
+    'index' = 'taxi_data_index',
+    'format' = 'json',
+    'json.fail-on-missing-field' = 'false',
+    'json.ignore-parse-errors' = 'true',
+    'json.timestamp-format.standard' = 'ISO-8601'
+);
+
+```
+```
+INSERT INTO taxi_data_index
+SELECT *
+FROM taxi_data;
+```
 #  Dashboard on this dataset
 
 # Inferences
+
+
+
+
+
+**Average Trip Fare by Hour**
+The bar chart represents the average trip fare amount (y-axis) at different hours of the day (x-axis). Each bar corresponds to a specific hour, indicating the fare trends throughout the day.
+
+- The average trip fare peaks at 3:30 AM (₹15.01), likely due to high demand during late-night or early-morning hours, such as for airport drop-offs or nightlife activities.
+- The fares steadily decrease during the morning and stabilize in the afternoon, possibly reflecting reduced demand or traffic-related factors.
+- This analysis can help businesses optimize their fleet allocation and implement surge pricing during peak hours.
+
+**Extra Charges Asked by Hour**
+
+The bar chart illustrates the average extra charges (y-axis) applied to trips during different hours of the day (x-axis). It captures additional fees like surcharges and premiums for specific times.
+- The highest extra charges occur between 3 AM and 4 AM, aligning with the peak average trip fares. This indicates that late-night trips often incur additional fees due to limited availability, higher demand, or specific services like airport pickups.
+- During daytime hours, extra charges are lower, reflecting either reduced surcharges or more standardized pricing.
+- Identifying such patterns is valuable for refining pricing strategies and improving customer communication about fare breakdowns.
+
+ **Demand in Different Parts of the City**
+The geospatial map shows the pickup locations for taxi trips across the city. Dense clusters of blue points indicate areas with high demand, while sparse points highlight regions with lower demand.
+
+- Central Manhattan exhibits the densest clusters of demand, reflecting its status as a commercial hub. Additionally, high activity is observed near Union City, Roosevelt Island, and LaGuardia Airport, suggesting significant demand from transportation hubs and key locations.
+- Outlying areas like Jersey City show sparse pickup points, indicating lower demand in suburban regions.
+- These insights can help taxi services optimize driver deployment in high-demand areas, reduce passenger wait times, and enhance service availability during peak hours.
