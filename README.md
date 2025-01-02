@@ -23,7 +23,7 @@ This repository contains a dashboard for analyzing taxi demand, fare trends, and
 13. Which areas of the city have the highest demand for taxi services?
 
 # Codes Used
-'''
+```
 CREATE TABLE taxi_data (
     id BIGINT PRIMARY KEY,
     VendorID INTEGER,
@@ -54,7 +54,7 @@ CREATE TABLE taxi_data (
     'format' = 'json',
     'json.timestamp-format.standard' = 'ISO-8601'  -- Ensure correct timestamp format parsing
 );
-'''
+```
 #  Dashboard on this dataset
 
 # Inferences
