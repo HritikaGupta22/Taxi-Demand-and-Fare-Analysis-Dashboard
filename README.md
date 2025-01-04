@@ -10,19 +10,32 @@ The dataset is sourced from the New York City (NYC) Taxi & Limousine Commission 
 
 **Columns in the dataset:**
 
---  VendorID: Identifies the taxi provider (e.g., Creative Mobile Technologies, VeriFone Inc.).
--- tpep_pickup_datetime / tpep_dropoff_datetime: Timestamps for the start and end of the trip.
+--  VendorID: Identifies the taxi provider (e.g., Creative Mobile Technologies, VeriFone Inc.)
+
+-- tpep_pickup_datetime / tpep_dropoff_datetime: Timestamps for the start and end of the trip
+
 -- Passenger_count: Number of passengers, manually entered by drivers.
+
 -- Trip_distance: Distance traveled during the trip, measured in miles.
+
 -- Pickup_longitude / Pickup_latitude: Geographic coordinates where the trip started.
+
 -- Dropoff_longitude / Dropoff_latitude: Geographic coordinates where the trip ended.
+
 -- RateCodeID: Fare classification (e.g., standard rate, JFK flat rate, group ride).
+
 -- Store_and_fwd_flag: Indicates if the trip record was temporarily stored due to server disconnection.
+
 -- Payment_type: Method of payment (e.g., credit card, cash, disputed).
+
 -- Fare_amount: Base fare calculated by the meter based on time and distance.
+
 -- Extra, MTA_tax, Improvement_surcharge: Additional charges applied to trips (e.g., rush hour surcharge, mandatory taxes).
+
 -- Tip_amount: Tips paid via credit card (cash tips not included).
+
 -- Tolls_amount: Toll charges incurred during the trip.
+
 -- Total_amount: The total trip cost, excluding cash tips.
 
 # Questions on this dataset
