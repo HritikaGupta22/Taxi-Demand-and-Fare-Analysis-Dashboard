@@ -61,6 +61,10 @@ The dataset is sourced from the New York City (NYC) Taxi & Limousine Commission 
 12. At what hours are extra charges the highest?
 13. Which areas of the city have the highest demand for taxi services?
 
+#  Dashboard on this dataset
+
+https://github.com/user-attachments/assets/af0b9f92-c613-4386-a7ad-46243345692e
+
 # Codes Used
 **Table creation in Apache Flink**
 ```
@@ -164,9 +168,6 @@ SELECT
     passenger_count
 FROM taxi_data;
 ```
-#  Dashboard on this dataset
-
-https://github.com/user-attachments/assets/af0b9f92-c613-4386-a7ad-46243345692e
 
 # Inferences
 
