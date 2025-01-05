@@ -62,6 +62,7 @@ The dataset is sourced from the New York City (NYC) Taxi & Limousine Commission 
 13. Which areas of the city have the highest demand for taxi services?
 
 # Codes Used
+**Table creation in Apache Flink**
 ```
 CREATE TABLE taxi_data (
     id BIGINT PRIMARY KEY,
@@ -94,7 +95,7 @@ CREATE TABLE taxi_data (
     'json.timestamp-format.standard' = 'ISO-8601'  -- Ensure correct timestamp format parsing
 );
 ```
-**create elk table**
+**Creating ELK table**
 
 ```
 CREATE TABLE taxi_data_index (
@@ -129,11 +130,13 @@ CREATE TABLE taxi_data_index (
 );
 
 ```
+**Data Storage with Elasticsearch**
 ```
 INSERT INTO taxi_data_index
 SELECT *
 FROM taxi_data;
 ```
+**Creating ELK table for Map Charts**
 ```
 CREATE TABLE geo_taxi_data (
     VendorID INTEGER,
