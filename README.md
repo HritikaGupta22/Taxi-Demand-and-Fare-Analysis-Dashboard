@@ -1,8 +1,12 @@
 # Taxi-Demand-and-Fare-Analysis-Dashboard
 This repository contains a dashboard for analyzing taxi demand, fare trends, and trip data. It includes insights on surge pricing, trip distances, payment issues, and spatial demand distribution across the city.
 # Methodology
-
-
+**Data Source:**
+The NYC Yellow Taxi Trip dataset for January 2016 was sourced from Kaggle.Data for a single day was extracted from the original CSV file to simplify processing and analysis.The filtered data was converted from CSV format to JSON format. The JSON data was transformed into a key-value pair format, making it suitable for processing and integration into the real-time data pipeline.
+**Data Generation and Kafka Integration:** A data generator was created to simulate real-time streaming of taxi trip records. The data was ingested into a Kafka topic, which acted as a message broker for the pipeline.
+**Stream Processing with Apache Flink:** Apache Flink was used to consume data from the Kafka topic. Data was processed, transformed, and structured into tables for downstream usage.
+**Data Storage with Elasticsearch:** The processed data was indexed and stored in Elasticsearch, a distributed search and analytics engine, for efficient querying and retrieval.
+**Data Visualization with Kibana:** Kibana was integrated with Elasticsearch to visualize the streaming data in real-time. The Kibana dashboard was accessed via localhost:5061 to create meaningful insights and visualizations.
 
 # About Dataset 
 
