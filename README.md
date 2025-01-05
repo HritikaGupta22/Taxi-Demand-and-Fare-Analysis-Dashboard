@@ -2,7 +2,7 @@
 This repository contains a dashboard for analyzing taxi demand, fare trends, and trip data. It includes insights on surge pricing, trip distances, payment issues, and spatial demand distribution across the city.
 # Methodology
 **Data Source:**
-The NYC Yellow Taxi Trip dataset for January 2016 was sourced from [click here](https://www.kaggle.com/datasets/elemento/nyc-yellow-taxi-trip-data). Data for a single day was extracted from the original CSV file to simplify processing and analysis.The filtered data was converted from CSV format to JSON format. The JSON data was transformed into a key-value pair format, making it suitable for processing and integration into the real-time data pipeline.
+The NYC Yellow Taxi Trip dataset for January 2016 was sourced from [Kaggle](https://www.kaggle.com/datasets/elemento/nyc-yellow-taxi-trip-data). Data for a single day was extracted from the original CSV file to simplify processing and analysis.The filtered data was converted from CSV format to JSON format. The JSON data was transformed into a key-value pair format, making it suitable for processing and integration into the real-time data pipeline.
 
 **Data Generation and Kafka Integration:** A data generator was created to simulate real-time streaming of taxi trip records. The data was ingested into a Kafka topic, which acted as a message broker for the pipeline.
 
