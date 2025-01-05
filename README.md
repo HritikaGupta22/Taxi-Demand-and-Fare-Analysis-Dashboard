@@ -126,6 +126,33 @@ INSERT INTO taxi_data_index
 SELECT *
 FROM taxi_data;
 ```
+```
+CREATE TABLE geo_taxi_data (
+    VendorID INTEGER,
+    RatecodeID INTEGER,
+    tpep_pickup_datetime TIMESTAMP(3),
+    pickup_location STRING, -- Elasticsearch will interpret this as a geo_point
+    passenger_count INTEGER
+) WITH (
+    'connector' = 'elasticsearch-7',
+    'hosts' = 'http://elasticsearch:9200',
+    'index' = 'geo_taxi_data',
+    'format' = 'json',
+    'json.fail-on-missing-field' = 'false',
+    'json.ignore-parse-errors' = 'true',
+    'json.timestamp-format.standard' = 'ISO-8601'
+);
+```
+```
+INSERT INTO geo_taxi_data
+SELECT
+    VendorID,
+    RatecodeID,
+    tpep_pickup_datetime,
+    CONCAT(CAST(pickup_latitude AS STRING), ',', CAST(pickup_longitude AS STRING)) AS pickup_location,
+    passenger_count
+FROM taxi_data;
+```
 #  Dashboard on this dataset
 
 # Inferences
