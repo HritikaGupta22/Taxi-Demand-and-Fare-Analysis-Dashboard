@@ -166,6 +166,8 @@ FROM taxi_data;
 ```
 #  Dashboard on this dataset
 
+https://github.com/user-attachments/assets/af0b9f92-c613-4386-a7ad-46243345692e
+
 # Inferences
 
 **Average Fare Amount**
